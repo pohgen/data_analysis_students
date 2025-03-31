@@ -12,9 +12,7 @@ def create_bq_client():
     CREDENTIALS = os.getenv("CREDENTIALS")
     PROJECT_ID = os.getenv("PROJECT_ID")
 
-    credentials = service_account.Credentials.from_service_account_file(
-        CREDENTIALS
-    )
+    credentials = service_account.Credentials.from_service_account_file(CREDENTIALS)
 
     client = bigquery.Client(credentials=credentials, project=PROJECT_ID)
     return client

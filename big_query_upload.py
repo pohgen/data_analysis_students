@@ -6,6 +6,7 @@ from google.cloud import bigquery
 
 from big_query_connection import create_bq_client
 
+
 load_dotenv()
 client = create_bq_client()
 project_id = os.getenv("PROJECT_ID")
@@ -19,10 +20,22 @@ job_config = bigquery.LoadJobConfig(
 dataset_id = project_id + "." + "student_performance" + "."
 
 files = [
-    ("parsed_csv/Students_Home_Info_Dataset.csv", f"{dataset_id}students_home_info"),
-    ("parsed_csv/Students_Parents_Info_Dataset.csv", f"{dataset_id}parents_info"),
-    ("parsed_csv/Students_Personal_info_Dataset.csv", f"{dataset_id}students_personal_info"),
-    ("parsed_csv/Students_Univercity_Dataset.csv", f"{dataset_id}students_university"),
+    (
+        "parsed_csv/Students_Home_Info_Dataset.csv",
+        f"{dataset_id}students_home_info"
+    ),
+    (
+        "parsed_csv/Students_Parents_Info_Dataset.csv",
+        f"{dataset_id}parents_info"
+    ),
+    (
+        "parsed_csv/Students_Personal_info_Dataset.csv",
+        f"{dataset_id}students_personal_info",
+    ),
+    (
+        "parsed_csv/Students_Univercity_Dataset.csv",
+        f"{dataset_id}students_university"
+    ),
 ]
 
 for file_open, table_id in files:
