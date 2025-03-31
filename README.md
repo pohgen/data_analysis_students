@@ -1,6 +1,9 @@
 ## Data Analysis Project with Web Scraping and BigQuery Integration
 
 ### Project Overview
+
+You will find a full overview of the statistics in this file: [Data_Analysis.ipynb](./Analysis_of_a_Private_Uniwercity_Database.ipynb)
+
 This project focuses on data collection, storage, transformation, and analysis using a custom-built web scraper, Google BigQuery, SQL, and Python-based data processing techniques. The dataset comprises student-related data extracted from multiple sources, integrated into a single table, and analyzed to derive insights.
 
 ### Data Collection
@@ -10,10 +13,10 @@ The dataset was obtained through a web scraper written in Python, leveraging the
 - **dataclasses** – for structured storage of extracted information
 
 The scraper extracted data from four different web pages and saved them into four CSV files:
-1. `parsed_csv/Students_Home_Info_Dataset.csv` – Containing students' academic details.
+1. `parsed_csv/Students_Home_Info_Dataset.csv` – Containing home details (Sleep hours, study hours).
 2. `parsed_csv/Students_Personal_info_Dataset.csv` – Containing personal details.
 3. `parsed_csv/Students_Univercity_Dataset.csv` – Containing performance-related statistics.
-4. `parsed_csv/Students_Parents_Info_Dataset.csv` – Containing family and background information.
+4. `parsed_csv/Students_Parents_Info_Dataset.csv` – Containing family and background information (Family Income, Family Education).
 
 ### Data Storage and Transformation
 The extracted CSV files were manually uploaded to **Google BigQuery**, where each file was stored as a separate table. SQL queries were then used to merge these tables into a unified dataset using **Student_ID** as the primary key. This approach ensured data integrity by eliminating duplicates, thereby conforming to **First Normal Form (1NF)**.
